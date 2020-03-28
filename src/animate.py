@@ -194,19 +194,10 @@ def run(country, region="", to_plot='confirmed', save=False, path=None, cached=F
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Shows Fitting')
-<< << << < HEAD
-parser.add_argument('--country', default="Italy")
-parser.add_argument('--region', default="")
-parser.add_argument('--to-plot', default="confirmed",
-                    choices=["deaths", "confirmed"])
-parser.add_argument('--cached', action="store_true")
-parser.add_argument('--no-repeat', action="store_true")
-== == == =
-parser.add_argument('--country', default='Italy', choices=['Italy'])
-parser.add_argument('--to-plot', default='confirmed',
+    parser.add_argument('--country', default='Italy', choices=['Italy'])
+    parser.add_argument('--to-plot', default='confirmed',
                     choices=['deaths', 'confirmed'])
 
->>>>>> > 7bf628770aca9f71448256d988db75975313ff2a
 args = parser.parse_args()
 
 run(args.country, region=args.region, to_plot=args.to_plot,
